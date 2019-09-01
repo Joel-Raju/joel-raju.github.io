@@ -8,7 +8,7 @@ module.exports = {
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
-  googleAnalyticsId: 'UA-73379983-2',
+  googleAnalyticsId: '',
   useKatex: false,
   menu: [
     {
@@ -26,7 +26,7 @@ module.exports = {
   ],
   author: {
     name: 'Joel Raju',
-    photo: '/photo.jpg',
+    photo: '/photo.png',
     bio: 'Hey there ! I\'m a softwere engineer who makes stuff. Come say hi!',
     contacts: {
       email: '#',
