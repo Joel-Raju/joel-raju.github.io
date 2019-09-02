@@ -3,7 +3,7 @@ title: Fix external monitor picture quality issue on Mac
 date: "2019-09-02T00:00:00.169Z"
 template: "post"
 draft: false
-slug: "/posts/override-display-color-profile-on-your-Mac/"
+slug: "/posts/fix-external-monitor-picture-quality-issue-on-Mac/"
 category: "Mac"
 tags:
   - "Mac"
@@ -13,9 +13,9 @@ tested and verified on LG 24MP88HV-S."
 ---
 
 Recently I got an external monitor the [***LG 24MP88HV-S***](https://www.lg.com/us/monitors/lg-24MP88HV-S-led-monitor), 
-hoping that it would be a good companion for my macbook. But to my surprise the text
-rendering and the contrast was horrible. It was like I need corrective lens. After digging on 
-the internet for a couple of hours I seemed to have identified what was wrong.
+hoping that it would be a good companion for my macbook. But to my surprise the text rendering and 
+the contrast was horrible. It was like I needed a pair of corrective lens. After 
+digging on the internet for a couple of hours I seemed to have identified what was wrong.
 
 
 **Problem:** 
