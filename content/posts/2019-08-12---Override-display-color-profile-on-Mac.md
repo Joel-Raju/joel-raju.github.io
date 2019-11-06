@@ -8,6 +8,7 @@ category: "Mac"
 tags:
   - "Mac"
   - "Guide"
+  - "Ruby"
 description: "This guide shows you how to override the display color profile on your mac. Its been 
 tested and verified on LG 24MP88HV-S."
 ---
