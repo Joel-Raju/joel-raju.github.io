@@ -6,9 +6,9 @@ draft: false
 slug: "/posts/fix-external-monitor-picture-quality-issue-on-Mac/"
 category: "Mac"
 tags:
-  - "Mac"
-  - "Guide"
-  - "Ruby"
+  - "mac"
+  - "guide"
+  - "ruby"
 description: "This guide shows you how to override the display color profile on your mac. Its been 
 tested and verified on LG 24MP88HV-S."
 ---

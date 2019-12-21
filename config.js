@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = {
-  url: 'https://lumen.netlify.com',
+  url: 'https://joelraju.com',
   pathPrefix: '/',
   title: 'Blog by Joel Raju',
-  subtitle: 'Hey there ! I\'m a softwere engineer who makes stuff. Come say hi!',
+  subtitle: 'Hey there ! I\'m a softwere engineer and an indie maker.',
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
@@ -27,14 +27,10 @@ module.exports = {
   author: {
     name: 'Joel Raju',
     photo: '/photo.png',
-    bio: 'Hey there ! I\'m a softwere engineer who makes stuff. Come say hi!',
+    bio: 'Hey there ! I\'m a softwere engineer and an indie maker.',
     contacts: {
-      email: '#',
-      telegram: '#',
-      twitter: '#',
-      github: 'https://github.com/Joel-Raju',
-      rss: '#',
-      vkontakte: '#'
+      github: 'Joel-Raju',
+      linkedin: 'joelraju',
     }
   }
 };
