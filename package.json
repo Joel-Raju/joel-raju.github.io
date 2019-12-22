@@ -1,7 +1,7 @@
 {
   "version": "3.0.0",
   "name": "joel-raju",
-  "description": "Personal blog of Joel Raju.",
+  "description": "Personal blog by Joel Raju.",
   "main": "n/a",
   "scripts": {
     "develop": "yarn run clean && gatsby develop",

@@ -1,30 +1,34 @@
 ---
-title: Fix external monitor picture quality issue on Mac
+title: Fix external display picture quality issue on Mac OS X
 date: "2019-09-02T00:00:00.169Z"
 template: "post"
 draft: false
-slug: "/posts/fix-external-monitor-picture-quality-issue-on-Mac/"
+slug: "/posts/fix-external-display-picture-quality-issue-on-Mac/"
 category: "Mac"
 tags:
   - "mac"
   - "guide"
   - "ruby"
-description: "This guide shows you how to override the display color profile on your mac. Its been 
-tested and verified on LG 24MP88HV-S."
+description: "This guide shows how to override an external display color profile on Mac OS X. It has
+been tested on LG 24MP88HV-S."
 ---
 
-Recently I got an external monitor the [***LG 24MP88HV-S***](https://www.lg.com/us/monitors/lg-24MP88HV-S-led-monitor), 
-hoping that it would be a good companion for my macbook. But to my surprise the text rendering and 
+Recently I got an external display the [***LG 24MP88HV-S***](https://www.lg.com/us/displays/lg-24MP88HV-S-led-display),
+hoping that it would be a good companion for my macbook pro. But to my surprise the font rendering and 
 the contrast was horrible. It was like I needed a pair of corrective lens. After 
-digging on the internet for a couple of hours I seemed to have identified what was wrong.
+digging a couple of hours on the internet for I seemed to have identified what was wrong.
 
 
-**Problem:** 
+### Problem ###
 
+The display port uses **YCbCr** colors instead of **RGB** to drive the display, which limits
+the range of colors and apparently causes the display to apply some undesired post processing.
 
-**Solution:** This 
+### Solution ###
 
+Manually override the the Display Profile to use **RGB** mode.
 
+Path `/System/Library/Displays/Overrides`
 
 
 ```ruby{numberLines: true}
@@ -74,7 +78,13 @@ f.write "
 f.close
 ```
 
+### Final thoughts ###
 
-References
+This hack might not be for everyone. If you dont mind spending a couple of hundred dollars more, you 
+can get a much nicer display recommended by Apple and avoid this hassle.
+
+
+
+### References ###
 * http://embdev.net/topic/284710
 * https://gist.github.com/ejdyksen/8302862

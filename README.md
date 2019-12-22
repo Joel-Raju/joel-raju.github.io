@@ -1,1 +1,1 @@
-Personal blog of [Joel Raju](https://www.joelraju.com)
+Personal blog by [Joel Raju](https://www.joelraju.com)
