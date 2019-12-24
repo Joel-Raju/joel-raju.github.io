@@ -1,5 +1,1 @@
-# joel-raju.github.io
-A portfolio website of Joel Raju.
-
-
-Visit: www.joelraju.com
+Personal blog by [Joel Raju](https://www.joelraju.com)
