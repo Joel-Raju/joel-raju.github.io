@@ -31,7 +31,7 @@ Manually override the the Display Profile to use **RGB** mode.
 
 2. Open the Terminal window by going to Utilities -> Terminal
 
-3. Disable System Integrity Protection.
+3. Disable the System Integrity Protection.
 
     It is a security technology to prevent modifying protected files ([read more](https://support.apple.com/en-us/HT204899)).
     Run  `csrutil disable; reboot` and press Enter
@@ -125,7 +125,7 @@ Manually override the the Display Profile to use **RGB** mode.
 
     run `csrutil enable; reboot` and press Enter
 
-10. Let the mac boot up normally.
+10. Let the mac boot up normally. Done !
 
 The display should look much better now.
 
