@@ -13,7 +13,7 @@ description: "This guide shows how to override an external display color profile
 been tested on LG 24MP88HV-S."
 ---
 
-Recently I got an external display the [***LG 24MP88HV-S***](https://www.lg.com/us/displays/lg-24MP88HV-S-led-display),
+Recently I bought an external display the [***LG 24MP88HV-S***](https://www.lg.com/us/displays/lg-24MP88HV-S-led-display),
 hoping that it would be a good companion for my macbook pro. But to my surprise the font rendering and
 the contrast was horrible. It was like I needed a pair of corrective lens. After
 digging a couple of hours on the internet for I seemed to have identified what was going wrong.
