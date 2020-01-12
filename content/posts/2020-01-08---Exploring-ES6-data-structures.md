@@ -73,7 +73,7 @@ person.delete(foo); // true
 person.delete(foo); // false - because foo has been deleted already
 ```
 
-To clear all key-value pairs from the Map object use `clear()` on the map object.
+Use `clear()` to clear all key-value pairs on the map object.
 
 ```js
 person.clear(foo);

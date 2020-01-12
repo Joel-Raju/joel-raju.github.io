@@ -31,6 +31,7 @@ module.exports = {
     contacts: {
       github: 'Joel-Raju',
       linkedin: 'joelraju',
+      twitter: '_joelraju'
     }
   }
 };
