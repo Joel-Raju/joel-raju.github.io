@@ -17,7 +17,7 @@ description: "Building a realtime chat with Socket-IO and ReactJS"
 ## Why websockets and how it works ? ##
 
 In the past, [long polling](https://en.wikipedia.org/wiki/Push_technology#Long_polling)
-was the primary way of implementing real time communication. The 
+was the primary way of implementing real time communication. The
 48 byte HTTP handshake is not realistic .
 
 Websockets allow you to send server side events by maintaing
@@ -34,13 +34,18 @@ See this in the Devtools image
 ## Building the Websocket server ##
 
 We could build websockets based upon the HTTP standard.
-Socket IO provides a nicer interface.
+Socket IO provides a nicer interface to
 
 ```js
-
+io.on('connection', function(socket) {
+  socket.on('message', function(data) {
+    socket.emit('message', { ...data, type: MESSAGE_TYPE.RECEIVED, timestamp: Date.now(), id:uniqid() });
+  });
+});
 ```
 
 ## Building the web client ##
+
 
 
 ## Further reading ##
