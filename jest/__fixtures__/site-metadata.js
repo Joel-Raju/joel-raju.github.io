@@ -32,8 +32,10 @@ module.exports = {
           telegram: '#',
           twitter: '#',
           github: '#',
-          rss: '#',
-          vkontakte: '#'
+          medium: '#',
+          devto: '#',
+          stackoverflow: '#',
+          producthunt: '#',
         }
       }
     }

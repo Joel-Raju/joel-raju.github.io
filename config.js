@@ -31,7 +31,11 @@ module.exports = {
     contacts: {
       github: 'Joel-Raju',
       linkedin: 'joelraju',
-      twitter: '_joelraju'
+      twitter: '_joelraju',
+      medium: 'joelraju.p',
+      devto: 'joelraju',
+      stackoverflow: '4067241/joel-raju',
+      producthunt: 'joelraju'
     }
   }
 };

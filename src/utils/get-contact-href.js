@@ -12,6 +12,18 @@ const getContactHref = (name: string, contact: string) => {
     case 'linkedin':
       href = `https://linkedin.com/in/${contact}`;
       break;
+    case 'medium':
+      href = `https://medium.com/@${contact}`;
+      break;
+    case 'devto':
+      href = `https://dev.to/${contact}`;
+      break;
+    case 'stackoverflow':
+      href = `https://stackoverflow.com/users/${contact}`;
+      break;
+    case 'producthunt':
+      href = `https://www.producthunt.com/@${contact}`;
+      break;
     case 'email':
       href = `mailto:${contact}`;
       break;

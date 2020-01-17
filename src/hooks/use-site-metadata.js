@@ -15,6 +15,10 @@ const useSiteMetadata = () => {
                 github
                 linkedin
                 twitter
+                medium
+                devto
+                stackoverflow
+                producthunt
               }
             }
             menu {
