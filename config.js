@@ -20,9 +20,13 @@ module.exports = {
       path: '/pages/about'
     },
     {
+      label: 'Stuff I\'ve made',
+      path: '/pages/stuff-i-have-made'
+    },
+    {
       label: 'Contact me',
       path: '/pages/contacts'
-    }
+    },
   ],
   author: {
     name: 'Joel Raju',
