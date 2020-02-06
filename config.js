@@ -4,7 +4,7 @@ module.exports = {
   url: 'https://joelraju.com',
   pathPrefix: '/',
   title: 'Blog by Joel Raju',
-  subtitle: 'Hey there ! I\'m a softwere engineer and an indie maker.',
+  subtitle: "Hey there ! I'm a softwere engineer and an indie maker.",
   copyright: '© All rights reserved.',
   disqusShortname: '',
   postsPerPage: 4,
@@ -20,18 +20,18 @@ module.exports = {
       path: '/pages/about'
     },
     {
-      label: 'Stuff I\'ve made',
+      label: "Stuff I've made",
       path: '/pages/stuff-i-have-made'
     },
     {
       label: 'Contact me',
       path: '/pages/contacts'
-    },
+    }
   ],
   author: {
     name: 'Joel Raju',
-    photo: '/photo.png',
-    bio: 'Hey there ! I\'m a softwere engineer and an indie maker.',
+    photo: '/media/photo.png',
+    bio: "Hey there ! I'm a softwere engineer and an indie maker.",
     contacts: {
       github: 'Joel-Raju',
       linkedin: 'joelraju',
