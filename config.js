@@ -7,7 +7,7 @@ module.exports = {
   subtitle: "Hey there ! I'm a softwere engineer and an indie maker.",
   copyright: '© All rights reserved.',
   disqusShortname: '',
-  postsPerPage: 4,
+  postsPerPage: 25,
   googleAnalyticsId: '',
   useKatex: false,
   menu: [
