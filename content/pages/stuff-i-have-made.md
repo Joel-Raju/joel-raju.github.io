@@ -1,6 +1,7 @@
 ---
-title: "Stuff I've made"
+title: Stuff I've made
 template: 'page'
+socialImage: '/media/photo.png'
 ---
 
 ## Open-source

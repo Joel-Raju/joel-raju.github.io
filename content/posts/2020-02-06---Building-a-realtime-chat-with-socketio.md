@@ -12,6 +12,7 @@ tags:
   - 'NodeJS'
   - 'SocketIO'
 description: 'Building a real-time chat with Socket.IO and ReactJS'
+socialImage: '/media/websocket-post/chat-demo.png'
 ---
 
 ## Why WebSockets ?

@@ -1,16 +1,17 @@
 ---
 title: Fix external display picture quality issue on Mac OS X
-date: "2019-09-02T00:00:00.169Z"
-template: "post"
+date: '2019-09-02T00:00:00.169Z'
+template: 'post'
 draft: false
-slug: "/posts/fix-external-display-picture-quality-issue-on-Mac/"
-category: "Mac"
+slug: '/posts/fix-external-display-picture-quality-issue-on-Mac/'
+category: 'Mac'
 tags:
-  - "mac"
-  - "guide"
-  - "ruby"
-description: "This guide shows how to override an external display color profile on Mac OS X. It has
-been tested on LG 24MP88HV-S."
+  - 'mac'
+  - 'guide'
+  - 'ruby'
+description: 'This guide shows how to override an external display color profile on Mac OS X. It has
+been tested on LG 24MP88HV-S.'
+socialImage: ''
 ---
 
 Recently I bought an external display the [**_LG 24MP88HV-S_**](https://www.lg.com/us/displays/lg-24MP88HV-S-led-display),

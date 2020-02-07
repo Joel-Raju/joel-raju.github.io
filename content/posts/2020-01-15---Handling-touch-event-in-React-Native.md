@@ -10,4 +10,5 @@ tags:
   - 'React Native'
   - 'React'
 description: 'Handle touch events (single click, double click and longpress) in React Native'
+socialImage: ''
 ---

@@ -11,6 +11,7 @@ tags:
   - "ES6"
 description: "A deep dive into new data structures in ES6 - Map, Set, Typed
 Arrays and more..."
+socialImage: ""
 ---
 
 Up & until ES5 the arrays and objects have been the primary mechanism for
