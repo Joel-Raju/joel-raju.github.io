@@ -6,11 +6,12 @@ draft: false
 slug: '/posts/building-a-realtime-chat-with-socket.io'
 category: 'programming'
 tags:
-  - 'programming'
-  - 'JavaScript'
-  - 'React'
+  - 'ReactJS'
   - 'NodeJS'
   - 'SocketIO'
+  - 'JavaScript'
+  - 'programming'
+
 description: 'Building a real-time chat with Socket.IO and ReactJS'
 socialImage: '/media/websocket-post/chat-demo.png'
 ---

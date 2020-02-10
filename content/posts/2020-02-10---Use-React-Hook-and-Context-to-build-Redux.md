@@ -6,7 +6,7 @@ draft: false
 slug: '/posts/use-react-hooks-and-context-to-create-a-redux-style-state-container'
 category: 'programming'
 tags:
-  - 'React'
+  - 'ReactJS'
   - 'JavaScript'
   - 'TypeScript'
   - 'ES6'
