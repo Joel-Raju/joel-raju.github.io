@@ -3,18 +3,19 @@ title: Use React Hooks & Context API to build a Redux style state container
 date: '2020-02-10T00:00:00.001Z'
 template: 'post'
 draft: false
-slug: '/posts/using-react-hooks-and-context-to-create-a-redux-style-gobal-state-container'
+slug: '/posts/use-react-hooks-and-context-to-create-a-redux-style-state-container'
 category: 'programming'
 tags:
-  - 'programming'
+  - 'React'
   - 'JavaScript'
   - 'TypeScript'
-  - 'React'
   - 'ES6'
+  - 'programming'
+
 description:
   'Use React hooks useReducer & useContext along with the Context API to build a Redux
   style global state container'
-socialImage: '/media/websocket-post/chat-demo.png'
+socialImage: '/media/react-logo.png'
 ---
 
 ## State management is hard
