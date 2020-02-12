@@ -208,6 +208,6 @@ Checkout the full source at [CodeSandbox](https://codesandbox.io/s/react-hooks-r
 ## Conclusion
 
 The state management utility we created in this article shows what's possible with React Hooks &
-Context API. This approach is best suited for medium-sized apps that needs a global state container
-like Redux but doesn't need all the bells and whistles like middlewares, debugging extensions etc.
-For complex apps I still use Redux and you should try it too.
+Context API. This approach is best suited for small to medium-sized apps that needs a global state
+container like Redux but doesn't need all the bells and whistles like middlewares, debugging
+extensions etc. For complex apps I still use Redux and you should try it too.
