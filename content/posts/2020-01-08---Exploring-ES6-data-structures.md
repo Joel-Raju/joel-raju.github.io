@@ -14,7 +14,7 @@ Arrays and more..."
 socialImage: ""
 ---
 
-Up & until ES5 the arrays and objects have been the primary mechanism for
+Up & until ES5, arrays and objects have been the primary mechanism for
 creating data structures in JS. With the introduction of ES6 specification, some
 new and useful data structure abstractions have been added.
 

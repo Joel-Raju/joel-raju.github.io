@@ -6,7 +6,7 @@ socialImage: '/media/photo.png'
 
 ## Open-source
 
-### Redis GUI
+### [Redis GUI](https://github.com/joel-raju/redis-gui)
 
 A Redis GUI client for Mac, Win & Linux built with Electron & Rust. (
 🚧 ⌛Work in progress)
@@ -30,6 +30,10 @@ A Cordova plugin (Android only) to make HTTP calls using Retrofit 2.
 
 A DApp to document your life by writing one sentence a day, all stored privately and securely. Built
 on top of BlockStack. -->
+
+### [Gamer Inside](https://play.google.com/store/apps/details?id=com.joelraju.gamerinside)
+
+IMDB for games
 
 ### [Hat The Rabbit](https://play.google.com/store/apps/details?id=com.JoelRaju.HatTheRabbit)
 
