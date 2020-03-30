@@ -2,7 +2,7 @@
 title: Effective form handling using React Hooks
 date: '2020-03-28T00:00:00.001Z'
 template: 'post'
-draft: true
+draft: false
 slug: '/posts/form-handling-using-react-hooks'
 category: 'programming'
 tags:
@@ -55,29 +55,167 @@ const handleFirstNameChange = ({ target: value }) => setFirstName(value);
 // ....
 ```
 
-Now lets throw in some validation and error message.
+Now lets add validation and error message.
 
 ```typescript
 // ....
 
 const [firstName, setFirstName] = React.useState('');
-const handleFirstNameChange = ({ target: { value } }) => setFirstName(value);
 const [firstNameError, setFirstNameError] = React.useState('');
+
+const handleFirstNameChange = ({ target: { value } }) => {
+  if (value.match(/^[a-zA-Z]*$/)) {
+    firstNameError('');
+  } else {
+    firstNameError('Field firstname is not valid !');
+  }
+  setFirstName(value);
+};
 
 // ....
 
 <input type='text' name='firstname' onChange={handleFirstNameChange} />;
+{
+  firstNameError && <span>{firstNameError}</span>;
+}
 
 // ....
 ```
 
 Looking pretty good, but imagine doing this for 5 input fields in a form, across 5 different
-forms in our app. If we decide to copy the same code over we are bloating the codebase, and the
-headache would kick in if try to debug or modify the form.
+forms in our app. If we decide to copy the same code over, we are bloating the codebase, and the
+headache would kick in if try to debug or extend the form.
 
 ## Can we do better ?
 
-The main
+Lets create a Hook and start tracking our input changes.
+
+```typescript
+// ...
+
+const useForm = () => {
+  const [values, setValues] = React.useState({});
+
+  const onChangeField = ({
+    target: { name, value }
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    setValues(prevState => ({ ...prevState, name: value }));
+  };
+
+  return { values, onChangeField };
+};
+
+// ...
+
+const {values, onChangeField} = useForm()
+
+<input type='text' name='firstname' onChange={onChangeField} />;
+
+// ...
+```
+
+This is already looking better. Lets add the initial field state.
+
+```typescript
+// ...
+
+const useForm = (props) => {
+  const { initialState } = props;
+  const [values, setValues] = React.useState(initialState || {});
+
+  const onChangeField = ({
+    target: { name, value }
+  } => {
+    setValues(prevState => ({ ...prevState, [name]: value }));
+  };
+
+  return { values, onChangeField };
+};
+
+// ...
+
+const {values, onChangeField} = useForm({initialState: {
+  firstname: 'John'
+}})
+
+<input type='text' name='firstname' onChange={onChangeField} value={values.firstname} />;
+
+// ...
+```
+
+The key point here is that we use the `name` of each field as the `key` for the different pieces of
+state we create. So for example `error.firstName` will contain the error of the `firstName` field
+and `touched.firstName` will contain the touched state of `firstName` and so on.
+
+Now lets throw in some validation and the form submit handler.
+
+```typescript
+// ...
+
+const useForm = props => {
+  const [values, setValues] = React.useState(props.initialState || {});
+  const [errors, setErrors] = React.useState({});
+
+  const isFieldValid = (name: string, value: string) => {
+    if (props.validator[name]) {
+      return !!value.match(props.validator[name]);
+    }
+    return true;
+  };
+
+  const onChangeField = ({
+    target: { name, value }
+  }: React.ChangeEvent<HTMLInputElement>) => {
+    if (!isFieldValid(name, value)) {
+      setErrors(prevErrors => ({
+        ...prevErrors,
+        [name]: `Field '${name}' not valid !`
+      }));
+    } else {
+      setErrors(prevErrors => ({ ...prevErrors, [name]: null }));
+    }
+
+    setValues(prevState => ({ ...prevState, [name]: value }));
+  };
+
+  const onSubmit = () => {
+    if (props.onSubmit === "function") {
+      props.onSubmit(values);
+    }
+  };
+
+  return { values, onChangeField, errors, onSubmit };
+
+  // ...
+
+  const { onChangeField, values, errors } = useForm({
+    initialState: { firstname: 'John' },
+    validator: { firstname: /^[a-zA-Z]*$/ }
+    onSubmit: vals => console.log(vals)
+  });
+
+  // ...
+  <form onSubmit={onSubmit}>
+    <div>
+      <label>FirstName</label>
+      <input
+        type='text'
+        name='firstname'
+        onChange={onChangeField}
+        value={values.firstname}
+      />
+      {errors.firstname && <span>{errors.firstname}</span>}
+    </div>
+  </form>
+};
+```
+
+We've now built a truly portable hook that could be used to handle forms in our app. We could keep
+going and add touched state, handle blur, field mount state, form submit state etc.
+
+## Source code
+
+Checkout the full source at [CodeSandbox](https://codesandbox.io/s/form-handling-using-hooks-d5oj3)
 
 ## Conclusion
 
