@@ -12,7 +12,7 @@ tags:
   - 'ES6'
   - 'programming'
 
-description: 'Handle forms effectively by creating reusable custom hook'
+description: 'Handle forms effectively by creating a custom hook'
 socialImage: '/media/react-logo.png'
 ---
 
