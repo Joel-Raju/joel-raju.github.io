@@ -12,7 +12,7 @@ tags:
   - 'ES6'
   - 'programming'
 
-description: 'Use React Hooks to build a reusable and effective form handling'
+description: 'Handle forms effectively by creating reusable custom hook'
 socialImage: '/media/react-logo.png'
 ---
 
@@ -34,7 +34,7 @@ Some of the popular libraries for form handling in React
 I could be hitting the hornet's nest with this, but I believe form state should be kept locally in
 the component and not in the global state container. The primary reason for this argument is because
 if we reuse the same form component elsewhere in our app, we often want different state for both the
-forms. Sure we could create additional pieces state for each instance of the form component, but
+forms. Sure, we could create additional pieces state for each instance of the form component, but
 this defeats the purpose of the global state which is to share same state across different
 components.
 
@@ -50,7 +50,12 @@ const handleFirstNameChange = ({ target: value }) => setFirstName(value);
 
 // ....
 
-<input type='text' name='firstname' onChange={handleFirstNameChange} />;
+<input
+  type='text'
+  name='firstname'
+  value={firstname}
+  onChange={handleFirstNameChange}
+/>;
 
 // ....
 ```
@@ -74,7 +79,12 @@ const handleFirstNameChange = ({ target: { value } }) => {
 
 // ....
 
-<input type='text' name='firstname' onChange={handleFirstNameChange} />;
+<input
+  type='text'
+  name='firstname'
+  value={firstname}
+  onChange={handleFirstNameChange}
+/>;
 {
   firstNameError && <span>{firstNameError}</span>;
 }
@@ -88,7 +98,7 @@ headache would kick in if try to debug or extend the form.
 
 ## Can we do better ?
 
-Lets create a Hook and start tracking our input changes.
+Lets start by creating a custom hook and tracking the input change.
 
 ```typescript
 // ...
@@ -107,14 +117,19 @@ const useForm = () => {
 
 // ...
 
-const {values, onChangeField} = useForm()
+const { values, onChangeField } = useForm();
 
-<input type='text' name='firstname' onChange={onChangeField} />;
+<input
+  type='text'
+  name='firstname'
+  value={values.firstname}
+  onChange={onChangeField}
+/>;
 
 // ...
 ```
 
-This is already looking better. Lets add the initial field state.
+Now, lets add the initial field state.
 
 ```typescript
 // ...
@@ -210,8 +225,8 @@ const useForm = props => {
 };
 ```
 
-We've now built a truly portable hook that could be used to handle forms in our app. We could keep
-going and add touched state, handle blur, field mount state, form submit state etc.
+We've now built a truly portable hook that can handle forms in our app. We could keep going and add
+touched state, handle blur, field mount state, form submit state etc.
 
 ## Source code
 
@@ -219,9 +234,13 @@ Checkout the full source at [CodeSandbox](https://codesandbox.io/s/form-handling
 
 ## Conclusion
 
-Using plain React can lead to making our components more readable, understandable and maintainable.
-You can port and extend this hook and use across your apps.
+Using plain React could lead to making our components more readable and very maintainable. You can
+port and extend this hook and use across your app.
 
 If you need a more mature library built with the same philosophy, checkout [Formik](https://github.com/jaredpalmer/formik).
-It has a fully fledged API with support for focus management, touched state, handling blur and more.
-It is one of most versatile form library out there !
+It has a fully fledged API with support for focus management, touched state, handling blur, support
+for React Native and more. It is one of most versatile form library out there !
+
+## Reference
+
+- [Formik](https://github.com/jaredpalmer/formik) (try reading the source, it's beautiful ✨)
