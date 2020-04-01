@@ -200,10 +200,10 @@ const useForm = props => {
   };
 
   return { values, onChangeField, errors, onSubmit };
-
+}
   // ...
 
-  const { onChangeField, values, errors } = useForm({
+  const { onChangeField, values, errors, onSubmit } = useForm({
     initialState: { firstname: 'John' },
     validator: { firstname: /^[a-zA-Z]*$/ }
     onSubmit: vals => console.log(vals)
@@ -235,7 +235,7 @@ Checkout the full source at [CodeSandbox](https://codesandbox.io/s/form-handling
 ## Conclusion
 
 Using plain React could lead to making our components more readable and very maintainable. You can
-port and extend this hook and use across your app.
+extend this hook and use across your app.
 
 If you need a more mature library built with the same philosophy, checkout [Formik](https://github.com/jaredpalmer/formik).
 It has a fully fledged API with support for focus management, touched state, handling blur, support
