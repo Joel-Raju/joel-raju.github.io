@@ -68,7 +68,7 @@ dispatch function.
 ```typescript
 // ...
 
-const GlobalStateContext = createContextcreateContext<{
+const GlobalStateContext = createContext<{
   state: State;
   dispatch: (action: Action) => void;
 }>({ state: INITIAL_STATE, dispatch: () => {} });
@@ -201,13 +201,26 @@ const Layout: React.FC = () => {
 export default Layout;
 ```
 
+## Performance
+
+This approach is suited for low frequency state updates. React Redux uses context internally but only
+to pass the Redux store instance down to child components - it doesn't pass the store state using
+context. It uses `store.subscribe()` to be notified of state updates.
+
+Passing down the store state will cause all the descendant nodes to re-render.
+
+See more about this here
+
+- [https://blog.isquaredsoftware.com/2020/01/blogged-answers-react-redux-and-context-behavior/](https://blog.isquaredsoftware.com/2020/01/blogged-answers-react-redux-and-context-behavior/)
+- [https://github.com/facebook/react/issues/15156#issuecomment-474590693](https://github.com/facebook/react/issues/15156#issuecomment-474590693)
+
 ## Souce code
 
 Checkout the full source at [CodeSandbox](https://codesandbox.io/s/react-hooks-redux-state-v5x4j)
 
 ## Conclusion
 
-The state management utility we created in this article shows what's possible with React Hooks &
-Context API. This approach is best suited for small to medium-sized apps that needs a global state
-container like Redux but doesn't need all the bells and whistles like middlewares, debugging
-extensions etc. For complex apps I still use Redux and you should try it too.
+The state management utility we created here shows what's possible with React Hooks &
+Context API. This approach as it is, without any performance optimizations, is best suited for low
+frequency state updates like theme, localization, auth, etc. For high frequency updates I still use
+Redux and you should try it too.
