@@ -241,6 +241,6 @@ const MyComponent = () => {
 ## Conclusion
 
 I've made [react-native-gifted-touch](https://github.com/Joel-Raju/react-native-gifted-touch) which
-exaclty does this so you can handle multiple clicks on the same element effortlessly. The default time
+exactly does this so you can handle multiple clicks on the same element effortlessly. The default time
 delays in the library can be configured using `props` to better suit your requirements. Feel free to
 check it out.
