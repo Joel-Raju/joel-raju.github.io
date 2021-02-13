@@ -81,7 +81,7 @@ const MyComponent = () => {
 `onStartShouldSetPanResponder` should return `true` to allow the view to become the responder at the
 start of a touch event.
 
-`onMoveShouldSetPanResponder` should return `true` to allow the view to become the reponder at the
+`onMoveShouldSetPanResponder` should return `true` to allow the view to become the responder at the
 start of a drag event.
 
 `onPanResponderStart` callback is fired when the `PanResponder` registers touch events.
