@@ -14,7 +14,6 @@ const useSiteMetadata = () => {
               contacts {
                 github
                 linkedin
-                twitter
                 medium
                 devto
                 stackoverflow
