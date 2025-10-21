@@ -4,8 +4,7 @@
   "description": "Personal blog by Joel Raju.",
   "main": "n/a",
   "engines": {
-    "node": ">=22.0.0",
-    "yarn": ">=1.22.0"
+    "node": ">=22.0.0"
   },
   "scripts": {
     "develop": "yarn run clean && gatsby develop",
