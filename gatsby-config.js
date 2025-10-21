@@ -103,7 +103,6 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [
-          'gatsby-remark-relative-images',
           {
             resolve: 'gatsby-remark-katex',
             options: {
@@ -114,8 +113,7 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 960,
-              withWebp: true,
-              ignoreFileExtensions: []
+              withWebp: true
             }
           },
           {
@@ -144,7 +142,7 @@ module.exports = {
         modulePath: `${__dirname}/src/cms/index.js`
       }
     },
-    {
+    ...(siteConfig.googleAnalyticsId ? [{
       resolve: 'gatsby-plugin-google-gtag',
       options: {
         trackingIds: [siteConfig.googleAnalyticsId],
@@ -152,7 +150,7 @@ module.exports = {
           head: true
         }
       }
-    },
+    }] : []),
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
@@ -168,21 +166,24 @@ module.exports = {
                 path: { regex: "/^(?!/404/|/404.html|/dev-404-page/)/" }
               }
             ) {
-              edges {
-                node {
-                  path
-                }
+              nodes {
+                path
               }
             }
           }
         `,
-        output: '/sitemap.xml',
-        serialize: ({ site, allSitePage }) =>
-          allSitePage.edges.map(edge => ({
-            url: site.siteMetadata.siteUrl + edge.node.path,
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => {
+          return allPages.map(page => {
+            return { ...page };
+          });
+        },
+        serialize: ({ path, ...rest }, { siteUrl }) => {
+          return {
+            url: siteUrl + path,
             changefreq: 'daily',
             priority: 0.7
-          }))
+          };
+        }
       }
     },
     {
@@ -205,7 +206,10 @@ module.exports = {
       options: {
         postCssPlugins: [...postCssPlugins],
         cssLoaderOptions: {
-          camelCase: false
+          esModule: false,
+          modules: {
+            namedExport: false
+          }
         }
       }
     },
