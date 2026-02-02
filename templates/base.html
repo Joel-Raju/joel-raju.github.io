@@ -32,17 +32,18 @@
   <a class="sr-only focus:not-sr-only focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-slate-900 focus:shadow" href="#content">Skip to content</a>
   <div class="mx-auto flex min-h-screen w-full max-w-4xl min-w-0 flex-col gap-8 px-6 py-10 md:px-10">
     <header class="flex flex-col gap-4 border-b border-slate-200 pb-4 md:flex-row md:items-center md:justify-between">
-      <a class="text-lg font-serif font-semibold tracking-tight text-slate-900" href="{{ get_url(path="/") }}">{{ config.title | default(value="Minimal Notes") }}</a>
+      <a class="text-lg font-serif font-semibold tracking-tight text-slate-900" href="{{ get_url(path="/") }}">{{ config.title | default(value="Joel Raju") }}</a>
       <nav class="flex flex-wrap gap-3 text-sm text-slate-600">
         {% if config.extra and config.extra.nav %}
           {% for item in config.extra.nav %}
             <a class="transition hover:text-slate-900" href="{{ get_url(path=item.path) }}">{{ item.name }}</a>
           {% endfor %}
         {% else %}
-          <a class="transition hover:text-slate-900" href="{{ get_url(path="/") }}">Home</a>
-          <a class="transition hover:text-slate-900" href="{{ get_url(path="/blog/") }}">Posts</a>
-          <a class="transition hover:text-slate-900" href="{{ get_url(path="/collections/") }}">Collections</a>
-          <a class="transition hover:text-slate-900" href="{{ get_url(path="/now/") }}">Now</a>
+          {% set current_path = current_path | default(value="") %}
+          <a class="transition hover:text-slate-900 {% if current_path == "/" %}font-semibold text-slate-900{% endif %}" href="{{ get_url(path="/") }}">Home</a>
+          <a class="transition hover:text-slate-900 {% if current_path is starting_with("/blog") %}font-semibold text-slate-900{% endif %}" href="{{ get_url(path="/blog/") }}">Posts</a>
+          <a class="transition hover:text-slate-900 {% if current_path is starting_with("/collections") %}font-semibold text-slate-900{% endif %}" href="{{ get_url(path="/collections/") }}">Collections</a>
+          <a class="transition hover:text-slate-900 {% if current_path is starting_with("/now") %}font-semibold text-slate-900{% endif %}" href="{{ get_url(path="/now/") }}">Now</a>
         {% endif %}
       </nav>
     </header>

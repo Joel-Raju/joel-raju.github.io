@@ -1,7 +1,7 @@
 # The URL the site will be built for
 base_url = "https://www.joelraju.com/"
-title = "Minimal Notes"
-description = "A quiet corner for stories, notes, and careful thinking."
+title = "Joel Raju"
+description = "Generalist software engineer writing about programming, startups, privacy, and tech."
 
 # Whether to automatically compile all Sass files in the sass directory
 compile_sass = false
