@@ -1,0 +1,73 @@
+@reference "tailwindcss";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans;
+  }
+
+  a {
+    @apply text-inherit no-underline;
+  }
+}
+
+@layer components {
+  .markdown {
+    @apply leading-relaxed text-slate-700;
+  }
+
+  .markdown h2 {
+    @apply mt-10 text-2xl font-serif text-slate-900;
+  }
+
+  .markdown h3 {
+    @apply mt-8 text-xl font-serif text-slate-900;
+  }
+
+  .markdown h4 {
+    @apply mt-6 text-lg font-serif text-slate-900;
+  }
+
+  .markdown p {
+    @apply mt-4;
+  }
+
+  .markdown a {
+    @apply underline decoration-slate-300 underline-offset-4 transition hover:text-slate-900;
+  }
+
+  .markdown ul {
+    @apply mt-4 list-disc pl-5;
+  }
+
+  .markdown ol {
+    @apply mt-4 list-decimal pl-5;
+  }
+
+  .markdown li {
+    @apply mt-2;
+  }
+
+  .markdown blockquote {
+    @apply my-6 border-l-2 border-slate-300 pl-4 text-slate-600 italic;
+  }
+
+  .markdown code {
+    @apply rounded bg-slate-100 px-1 py-0.5 text-sm;
+  }
+
+  .markdown pre {
+    @apply my-6 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-100 p-5 text-sm text-slate-900;
+  }
+
+  .markdown pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .markdown img {
+    @apply my-6 rounded-2xl;
+  }
+}

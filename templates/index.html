@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="space-y-5">
+  <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Minimal notes</p>
+  <h1 class="text-3xl font-serif font-semibold tracking-tight text-slate-900 md:text-5xl">{{ config.title | default(value="Minimal Notes") }}</h1>
+  <p class="max-w-2xl text-base text-slate-600 md:text-lg">{{ config.description | default(value="A quiet corner for stories, notes, and careful thinking.") }}</p>
+  <div>
+    <a class="inline-flex items-center rounded-full border border-slate-900 px-5 py-2 text-sm font-medium text-slate-900 transition hover:bg-slate-900 hover:text-white" href="{{ get_url(path="/blog/") }}">Browse posts</a>
+  </div>
+</section>
+
+<section class="mt-12 grid gap-6 md:grid-cols-3">
+  <div class="rounded-2xl border border-slate-200 p-5">
+    <h2 class="font-serif text-lg text-slate-900">Writing</h2>
+    <p class="mt-2 text-sm text-slate-600">Essays, notes, and experiments in progress.</p>
+  </div>
+  <div class="rounded-2xl border border-slate-200 p-5">
+    <h2 class="font-serif text-lg text-slate-900">Collections</h2>
+    <p class="mt-2 text-sm text-slate-600">Curated threads of work and learning.</p>
+  </div>
+  <div class="rounded-2xl border border-slate-200 p-5">
+    <h2 class="font-serif text-lg text-slate-900">Now</h2>
+    <p class="mt-2 text-sm text-slate-600">What I am reading, building, and thinking about.</p>
+  </div>
+</section>
+{% endblock content %}

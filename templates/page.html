@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<article class="space-y-8">
+  <header class="space-y-4">
+    <p class="text-xs uppercase tracking-[0.3em] text-slate-500">{{ page.extra.eyebrow | default(value="Post") }}</p>
+    <h1 class="text-3xl font-serif font-semibold tracking-tight text-slate-900 md:text-4xl">{{ page.title }}</h1>
+    <div class="flex flex-wrap gap-3 text-xs uppercase tracking-[0.2em] text-slate-500">
+      {% if page.date %}
+      <span>{{ page.date | date(format="%b %d, %Y") }}</span>
+      {% endif %}
+      {% if page.reading_time %}
+      <span>{{ page.reading_time }} min read</span>
+      {% endif %}
+      {% if page.taxonomies and page.taxonomies.tags %}
+      <span>{{ page.taxonomies.tags | join(sep=", ") }}</span>
+      {% endif %}
+    </div>
+  </header>
+  <div class="markdown">
+    {{ page.content | safe }}
+  </div>
+</article>
+{% endblock content %}

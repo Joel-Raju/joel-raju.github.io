@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="space-y-3">
+  <p class="text-xs uppercase tracking-[0.3em] text-slate-500">{{ section.title | default(value="Posts") }}</p>
+  {% if section.description %}
+  <p class="max-w-2xl text-base text-slate-600">{{ section.description }}</p>
+  {% endif %}
+</header>
+
+{% if section.content %}
+<div class="markdown mt-6 text-slate-600">
+  {{ section.content | safe }}
+</div>
+{% endif %}
+
+<div class="mt-8 space-y-6">
+  {% for page in section.pages | sort(attribute="date") | reverse %}
+  <article class="flex flex-col gap-3 border-t border-slate-200 pt-6 md:flex-row md:items-start md:justify-between">
+    <div class="space-y-2">
+      <h2 class="text-xl font-serif text-slate-900"><a class="transition hover:text-slate-600" href="{{ page.permalink }}">{{ page.title }}</a></h2>
+      {% if page.summary %}
+      <p class="text-sm text-slate-600">{{ page.summary | safe }}</p>
+      {% elif page.description %}
+      <p class="text-sm text-slate-600">{{ page.description }}</p>
+      {% endif %}
+    </div>
+    {% if page.date %}
+    <time class="text-xs uppercase tracking-[0.25em] text-slate-500" datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time>
+    {% endif %}
+  </article>
+  {% endfor %}
+</div>
+
+{% if section.pages | length == 0 %}
+<p class="mt-8 rounded-xl border border-dashed border-slate-200 px-4 py-3 text-sm text-slate-500">No posts yet. Add a markdown file in the content folder to begin.</p>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<header class="space-y-3">
+  <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Tags</p>
+  <p class="max-w-2xl text-base text-slate-600">Topics and threads across the writing.</p>
+</header>
+
+<div class="mt-8 flex flex-wrap gap-3">
+  {% for term in terms %}
+  <a class="inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-sm text-slate-600 transition hover:border-slate-900 hover:text-slate-900" href="{{ term.permalink }}">
+    <span>{{ term.name }}</span>
+    <span class="flex h-6 min-w-[24px] items-center justify-center rounded-full border border-slate-200 px-2 text-xs text-slate-500">{{ term.pages | length }}</span>
+  </a>
+  {% endfor %}
+</div>
+{% endblock content %}
