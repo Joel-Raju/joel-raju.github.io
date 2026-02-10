@@ -1,13 +1,13 @@
 +++
 title = "Now"
-date = 2026-02-01
-description = "What I'm focused on this season."
+date = 2026-02-10
+description = "A running log of what I'm up to."
+template = "now.html"
 +++
 
-Right now I'm:
+### Feb 10, 2026
 
-- Writing short essays about product craft
-- Building a quiet library of tools and patterns
-- Reading *Designing Data-Intensive Applications*
+- Setting up this blog with Zola
+- Building products at [tinkerlabs.ai](https://tinkerlabs.ai)
 
-If you're looking for something specific, send a note.
+

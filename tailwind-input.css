@@ -70,4 +70,41 @@
   .markdown img {
     @apply my-6 rounded-2xl;
   }
+
+  .now-diary {
+    @apply leading-relaxed text-slate-700;
+  }
+
+  .now-diary h2 {
+    @apply mt-10 mb-5 text-xs font-medium uppercase tracking-[0.25em] text-slate-400;
+  }
+
+  .now-diary h2:first-child {
+    @apply mt-0;
+  }
+
+  .now-diary h2 a {
+    @apply text-slate-400 no-underline transition hover:text-slate-600;
+  }
+
+  .now-diary ul {
+    @apply mt-0 space-y-4 list-none pl-4 border-l border-slate-100;
+  }
+
+  .now-diary li {
+    @apply relative pl-4 text-base leading-relaxed text-slate-700;
+  }
+
+  .now-diary li::before {
+    content: "";
+    @apply absolute left-[-17px] top-[10px] h-1.5 w-1.5 rounded-full bg-slate-300;
+  }
+
+  .now-diary a {
+    @apply underline decoration-slate-300 underline-offset-4 transition hover:text-slate-900;
+  }
+
+  .now-diary p {
+    @apply mt-3 text-sm text-slate-500;
+  }
 }

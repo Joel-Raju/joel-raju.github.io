@@ -13,7 +13,9 @@
       <span>{{ page.reading_time }} min read</span>
       {% endif %}
       {% if page.taxonomies and page.taxonomies.tags %}
-      <span>{{ page.taxonomies.tags | join(sep=", ") }}</span>
+      {% for tag in page.taxonomies.tags %}
+      <a class="transition hover:text-slate-900" href="{{ get_taxonomy_url(kind="tags", name=tag) }}">{{ tag }}</a>
+      {% endfor %}
       {% endif %}
     </div>
   </header>
