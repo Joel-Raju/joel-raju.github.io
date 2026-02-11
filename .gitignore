@@ -2,3 +2,64 @@ node_modules
 .DS_Store
 
 ./tailwindcss 
+
+
+# =========================
+# Zola build output
+# =========================
+public/
+
+# Sass cache (if using Sass)
+.sass-cache/
+
+# =========================
+# Rust / Cargo
+# =========================
+target/
+Cargo.lock
+
+# ^ Keep Cargo.lock if this is a binary/application project.
+# For libraries, you may want to ignore it.
+
+# =========================
+# macOS
+# =========================
+.DS_Store
+
+# =========================
+# Windows
+# =========================
+Thumbs.db
+desktop.ini
+
+# =========================
+# Linux
+# =========================
+*~
+
+# =========================
+# IDEs / Editors
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# =========================
+# Environment files
+# =========================
+.env
+.env.*
+
+# =========================
+# Logs
+# =========================
+*.log
+
+# =========================
+# Optional: Netlify build artifacts
+# =========================
+.netlify/
+
+# Optional: Vercel
+.vercel/
