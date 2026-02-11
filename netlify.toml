@@ -1,0 +1,9 @@
+[build]
+  command = "curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64 && chmod +x tailwindcss-linux-x64 && ./tailwindcss-linux-x64 -i tailwind-input.css -o static/tailwind.css --minify && zola build"
+  publish = "public"
+
+[build.environment]
+  ZOLA_VERSION = "0.19.2"
+
+[context.deploy-preview]
+  command = "curl -sLO https://github.com/tailwindlabs/tailwindcss/releases/latest/download/tailwindcss-linux-x64 && chmod +x tailwindcss-linux-x64 && ./tailwindcss-linux-x64 -i tailwind-input.css -o static/tailwind.css --minify && zola build --base-url $DEPLOY_PRIME_URL"

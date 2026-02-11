@@ -54,7 +54,7 @@ there is no need of performing the handshake on each request.
 
 After running the demo, open the Network Tab in Dev Tools to see the WebSocket client handshake.
 
-![Dev tools image](./media/websocket-post/dev-tools-image.png)
+![Dev tools image](/images/blog/websocket-post/dev-tools-image.png)
 
 ## Enter Socket.IO
 
@@ -164,7 +164,7 @@ module.exports = {
 
 ## Building the web client
 
-![Chat UI](./media/websocket-post/chat-demo.png)
+![Chat UI](/images/blog/websocket-post/chat-demo.png)
 
 The web client is a basic 2 pane layout with contacts on the left and the chat messages on the
 right.

@@ -68,7 +68,7 @@
   }
 
   .markdown img {
-    @apply my-6 rounded-2xl;
+    @apply my-6 max-w-full h-auto rounded-2xl;
   }
 
   .now-diary {

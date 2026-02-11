@@ -7,7 +7,7 @@ description = "Handling multiple click events (single click, double click and lo
 tags = ["programming", "React Native", "React"]
 +++
 
-![React Native Logo](./media/react-native-logo.jpg)
+![React Native Logo](/images/blog/handling-touch-events/react-native-logo.jpg)
 
 ## Introduction to click events in React Native
 
