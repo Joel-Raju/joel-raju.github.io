@@ -27,23 +27,34 @@
   {% endif %}
   <link rel="canonical" href="{{ canonical_url }}">
   <link rel="stylesheet" href="{{ get_url(path="tailwind.css") }}">
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  </script>
 </head>
-<body class="min-h-screen overflow-x-hidden bg-white text-slate-900 antialiased">
+<body class="min-h-screen overflow-x-hidden bg-white text-slate-900 antialiased transition-colors duration-300 dark:bg-slate-950 dark:text-slate-100">
   <a class="sr-only focus:not-sr-only focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-slate-900 focus:shadow" href="#content">Skip to content</a>
   <div class="mx-auto flex min-h-screen w-full max-w-4xl min-w-0 flex-col gap-8 px-6 py-10 md:px-10">
-    <header class="flex flex-col gap-4 border-b border-slate-100 pb-5 md:flex-row md:items-center md:justify-between">
-      <a class="text-lg font-serif font-semibold tracking-tight text-slate-900" href="{{ get_url(path="/") }}">{{ config.title | default(value="Joel Raju") }}</a>
-      <nav class="flex flex-wrap gap-5 text-sm font-medium text-slate-500">
+    <header class="flex flex-col gap-4 border-b border-slate-100 pb-5 dark:border-slate-800 md:flex-row md:items-center md:justify-between">
+      <a class="text-lg font-serif font-semibold tracking-tight text-slate-900 dark:text-slate-100" href="{{ get_url(path="/") }}">{{ config.title | default(value="Joel Raju") }}</a>
+      <nav class="flex flex-wrap items-center gap-5 text-sm font-medium text-slate-500 dark:text-slate-400">
         {% if config.extra and config.extra.nav %}
           {% for item in config.extra.nav %}
             <a class="transition hover:text-slate-900" href="{{ get_url(path=item.path) }}">{{ item.name }}</a>
           {% endfor %}
         {% else %}
           {% set current_path = current_path | default(value="") %}
-          <a class="transition hover:text-slate-900 hover:underline hover:underline-offset-4 {% if current_path == "/" %}font-semibold text-slate-900{% endif %}" href="{{ get_url(path="/") }}">Home</a>
-          <a class="transition hover:text-slate-900 hover:underline hover:underline-offset-4 {% if current_path is starting_with("/blog") %}font-semibold text-slate-900{% endif %}" href="{{ get_url(path="/blog/") }}">Posts</a>
-          <a class="transition hover:text-slate-900 hover:underline hover:underline-offset-4 {% if current_path is starting_with("/collections") %}font-semibold text-slate-900{% endif %}" href="{{ get_url(path="/collections/") }}">Collections</a>
-          <a class="transition hover:text-slate-900 hover:underline hover:underline-offset-4 {% if current_path is starting_with("/now") %}font-semibold text-slate-900{% endif %}" href="{{ get_url(path="/now/") }}">Now</a>
+          <a class="transition hover:text-slate-900 hover:underline hover:underline-offset-4 dark:hover:text-slate-100 {% if current_path == "/" %}font-semibold text-slate-900 dark:text-slate-100{% endif %}" href="{{ get_url(path="/") }}">Home</a>
+          <a class="transition hover:text-slate-900 hover:underline hover:underline-offset-4 dark:hover:text-slate-100 {% if current_path is starting_with("/blog") %}font-semibold text-slate-900 dark:text-slate-100{% endif %}" href="{{ get_url(path="/blog/") }}">Posts</a>
+          <a class="transition hover:text-slate-900 hover:underline hover:underline-offset-4 dark:hover:text-slate-100 {% if current_path is starting_with("/collections") %}font-semibold text-slate-900 dark:text-slate-100{% endif %}" href="{{ get_url(path="/collections/") }}">Collections</a>
+          <a class="transition hover:text-slate-900 hover:underline hover:underline-offset-4 dark:hover:text-slate-100 {% if current_path is starting_with("/now") %}font-semibold text-slate-900 dark:text-slate-100{% endif %}" href="{{ get_url(path="/now/") }}">Now</a>
+          <button id="theme-toggle" class="ml-1 rounded-full p-1.5 text-slate-500 transition hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-100" aria-label="Toggle dark mode">
+            <svg id="icon-sun" class="hidden h-4 w-4 dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" /></svg>
+            <svg id="icon-moon" class="block h-4 w-4 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" /></svg>
+          </button>
         {% endif %}
       </nav>
     </header>
@@ -52,10 +63,21 @@
       {% block content %}{% endblock content %}
     </main>
 
-    <footer class="flex flex-col gap-2 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+    <footer class="flex flex-col gap-2 text-sm text-slate-500 dark:text-slate-500 md:flex-row md:items-center md:justify-between">
       <div>Copyright {{ now() | date(format="%Y") }} {{ config.title | default(value="Minimal Notes") }}</div>
-      <div class="text-slate-400">Built with Zola.</div>
+      <div class="text-slate-400 dark:text-slate-600">Built with Zola.</div>
     </footer>
   </div>
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      if (document.documentElement.classList.contains('dark')) {
+        document.documentElement.classList.remove('dark');
+        localStorage.theme = 'light';
+      } else {
+        document.documentElement.classList.add('dark');
+        localStorage.theme = 'dark';
+      }
+    });
+  </script>
 </body>
 </html>

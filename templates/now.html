@@ -3,11 +3,11 @@
 {% block content %}
 <article class="max-w-2xl space-y-8">
   <header class="space-y-4">
-    <h1 class="text-2xl font-serif font-semibold tracking-tight text-slate-900">{{ page.title }}</h1>
+    <h1 class="text-2xl font-serif font-semibold tracking-tight text-slate-900 dark:text-slate-100">{{ page.title }}</h1>
     {% if page.description %}
-    <p class="text-base leading-relaxed text-slate-600">{{ page.description }}</p>
+    <p class="text-base leading-relaxed text-slate-600 dark:text-slate-400">{{ page.description }}</p>
     {% endif %}
-    <p class="text-sm text-slate-400">Inspired by the <a class="underline decoration-slate-300 underline-offset-4 transition hover:text-slate-600" href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">/now movement</a> · Last updated {{ page.date | date(format="%b %d, %Y") }}</p>
+    <p class="text-sm text-slate-400 dark:text-slate-500">Inspired by the <a class="underline decoration-slate-300 underline-offset-4 transition hover:text-slate-600 dark:decoration-slate-600 dark:hover:text-slate-300" href="https://nownownow.com/about" target="_blank" rel="noopener noreferrer">/now movement</a> · Last updated {{ page.date | date(format="%b %d, %Y") }}</p>
   </header>
   <div class="now-diary">
     {{ page.content | safe }}

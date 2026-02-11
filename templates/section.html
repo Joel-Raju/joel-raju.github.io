@@ -2,44 +2,44 @@
 
 {% block content %}
 <header class="space-y-3">
-  <p class="text-xs uppercase tracking-[0.3em] text-slate-500">{{ section.title | default(value="Posts") }}</p>
+  <p class="text-xs uppercase tracking-[0.3em] text-slate-500 dark:text-slate-500">{{ section.title | default(value="Posts") }}</p>
   {% if section.description %}
-  <p class="max-w-2xl text-base text-slate-600">{{ section.description }}</p>
+  <p class="max-w-2xl text-base text-slate-600 dark:text-slate-400">{{ section.description }}</p>
   {% endif %}
 </header>
 
 {% if section.content %}
-<div class="markdown mt-6 text-slate-600">
+<div class="markdown mt-6 text-slate-600 dark:text-slate-400">
   {{ section.content | safe }}
 </div>
 {% endif %}
 
 <div class="mt-8 space-y-6">
   {% for page in section.pages | sort(attribute="date") | reverse %}
-  <article class="flex flex-col gap-3 border-t border-slate-200 pt-6 md:flex-row md:items-start md:justify-between md:gap-6">
+  <article class="flex flex-col gap-3 border-t border-slate-200 pt-6 dark:border-slate-800 md:flex-row md:items-start md:justify-between md:gap-6">
     <div class="space-y-2 min-w-0">
-      <h2 class="text-xl font-serif text-slate-900"><a class="transition hover:text-slate-600" href="{{ page.permalink }}">{{ page.title }}</a></h2>
+      <h2 class="text-xl font-serif text-slate-900 dark:text-slate-100"><a class="transition hover:text-slate-600 dark:hover:text-slate-300" href="{{ page.permalink }}">{{ page.title }}</a></h2>
       {% if page.summary %}
-      <p class="text-sm text-slate-600">{{ page.summary | safe }}</p>
+      <p class="text-sm text-slate-600 dark:text-slate-400">{{ page.summary | safe }}</p>
       {% elif page.description %}
-      <p class="text-sm text-slate-600">{{ page.description }}</p>
+      <p class="text-sm text-slate-600 dark:text-slate-400">{{ page.description }}</p>
       {% endif %}
       {% if page.taxonomies and page.taxonomies.tags %}
       <div class="flex flex-wrap gap-2">
         {% for tag in page.taxonomies.tags %}
-        <a class="text-xs text-slate-400 transition hover:text-slate-700" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>
+        <a class="text-xs text-slate-400 transition hover:text-slate-700 dark:text-slate-500 dark:hover:text-slate-300" href="{{ get_taxonomy_url(kind='tags', name=tag) }}">#{{ tag }}</a>
         {% endfor %}
       </div>
       {% endif %}
     </div>
     {% if page.date %}
-    <time class="shrink-0 text-xs uppercase tracking-[0.25em] text-slate-500 whitespace-nowrap" datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time>
+    <time class="shrink-0 text-xs uppercase tracking-[0.25em] text-slate-500 whitespace-nowrap dark:text-slate-500" datetime="{{ page.date }}">{{ page.date | date(format="%b %d, %Y") }}</time>
     {% endif %}
   </article>
   {% endfor %}
 </div>
 
 {% if section.pages | length == 0 %}
-<p class="mt-8 rounded-xl border border-dashed border-slate-200 px-4 py-3 text-sm text-slate-500">No posts yet. Add a markdown file in the content folder to begin.</p>
+<p class="mt-8 rounded-xl border border-dashed border-slate-200 px-4 py-3 text-sm text-slate-500 dark:border-slate-700 dark:text-slate-500">No posts yet. Add a markdown file in the content folder to begin.</p>
 {% endif %}
 {% endblock content %}

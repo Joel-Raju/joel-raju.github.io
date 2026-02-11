@@ -1,5 +1,7 @@
 @reference "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -16,19 +18,19 @@
 
 @layer components {
   .markdown {
-    @apply leading-relaxed text-slate-700;
+    @apply leading-relaxed text-slate-700 dark:text-slate-300;
   }
 
   .markdown h2 {
-    @apply mt-10 text-xl font-serif text-slate-900 md:text-2xl;
+    @apply mt-10 text-xl font-serif text-slate-900 dark:text-slate-100 md:text-2xl;
   }
 
   .markdown h3 {
-    @apply mt-8 text-lg font-serif text-slate-900 md:text-xl;
+    @apply mt-8 text-lg font-serif text-slate-900 dark:text-slate-100 md:text-xl;
   }
 
   .markdown h4 {
-    @apply mt-6 text-base font-serif text-slate-900 md:text-lg;
+    @apply mt-6 text-base font-serif text-slate-900 dark:text-slate-100 md:text-lg;
   }
 
   .markdown p {
@@ -36,7 +38,7 @@
   }
 
   .markdown a {
-    @apply underline decoration-slate-300 underline-offset-4 transition hover:text-slate-900;
+    @apply underline decoration-slate-300 underline-offset-4 transition hover:text-slate-900 dark:decoration-slate-600 dark:hover:text-slate-100;
   }
 
   .markdown ul {
@@ -52,15 +54,15 @@
   }
 
   .markdown blockquote {
-    @apply my-6 border-l-2 border-slate-300 pl-4 text-slate-600 italic;
+    @apply my-6 border-l-2 border-slate-300 pl-4 text-slate-600 italic dark:border-slate-600 dark:text-slate-400;
   }
 
   .markdown code {
-    @apply rounded bg-slate-100 px-1 py-0.5 text-sm break-words;
+    @apply rounded bg-slate-100 px-1 py-0.5 text-sm break-words dark:bg-slate-800;
   }
 
   .markdown pre {
-    @apply my-6 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-100 p-4 text-sm text-slate-900 max-w-full md:p-5;
+    @apply my-6 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-100 p-4 text-sm text-slate-900 max-w-full dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 md:p-5;
   }
 
   .markdown pre code {
@@ -71,12 +73,13 @@
     @apply my-6 max-w-full h-auto rounded-2xl;
   }
 
+
   .now-diary {
-    @apply leading-relaxed text-slate-700;
+    @apply leading-relaxed text-slate-700 dark:text-slate-300;
   }
 
   .now-diary h2 {
-    @apply mt-10 mb-5 text-xs font-medium uppercase tracking-[0.25em] text-slate-400;
+    @apply mt-10 mb-5 text-xs font-medium uppercase tracking-[0.25em] text-slate-400 dark:text-slate-500;
   }
 
   .now-diary h2:first-child {
@@ -84,27 +87,27 @@
   }
 
   .now-diary h2 a {
-    @apply text-slate-400 no-underline transition hover:text-slate-600;
+    @apply text-slate-400 no-underline transition hover:text-slate-600 dark:text-slate-500 dark:hover:text-slate-300;
   }
 
   .now-diary ul {
-    @apply mt-0 space-y-4 list-none pl-4 border-l border-slate-100;
+    @apply mt-0 space-y-4 list-none pl-4 border-l border-slate-100 dark:border-slate-800;
   }
 
   .now-diary li {
-    @apply relative pl-4 text-base leading-relaxed text-slate-700;
+    @apply relative pl-4 text-base leading-relaxed text-slate-700 dark:text-slate-300;
   }
 
   .now-diary li::before {
     content: "";
-    @apply absolute left-[-17px] top-[10px] h-1.5 w-1.5 rounded-full bg-slate-300;
+    @apply absolute left-[-17px] top-[10px] h-1.5 w-1.5 rounded-full bg-slate-300 dark:bg-slate-600;
   }
 
   .now-diary a {
-    @apply underline decoration-slate-300 underline-offset-4 transition hover:text-slate-900;
+    @apply underline decoration-slate-300 underline-offset-4 transition hover:text-slate-900 dark:decoration-slate-600 dark:hover:text-slate-100;
   }
 
   .now-diary p {
-    @apply mt-3 text-sm text-slate-500;
+    @apply mt-3 text-sm text-slate-500 dark:text-slate-500;
   }
 }
