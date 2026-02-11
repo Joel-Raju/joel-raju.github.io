@@ -7,7 +7,7 @@ template = "now.html"
 
 ### Feb 10, 2026
 
-- Setting up this blog with Zola
+- Setting up this blog with [Zola](https://www.getzola.org/)
 - Building products at [tinkerlabs.ai](https://tinkerlabs.ai)
 
 
