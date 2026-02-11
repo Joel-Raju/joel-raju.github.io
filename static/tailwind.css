@@ -157,14 +157,17 @@
 .mt-1 {
   margin-top: calc(var(--spacing, 0.25rem) * 1);
 }
+.mt-4 {
+  margin-top: calc(var(--spacing, 0.25rem) * 4);
+}
 .mt-6 {
   margin-top: calc(var(--spacing, 0.25rem) * 6);
 }
 .mt-8 {
   margin-top: calc(var(--spacing, 0.25rem) * 8);
 }
-.mt-12 {
-  margin-top: calc(var(--spacing, 0.25rem) * 12);
+.mt-10 {
+  margin-top: calc(var(--spacing, 0.25rem) * 10);
 }
 .mb-8 {
   margin-bottom: calc(var(--spacing, 0.25rem) * 8);
@@ -351,6 +354,9 @@
 }
 .max-w-7xl {
   max-width: var(--container-7xl, 80rem);
+}
+.max-w-full {
+  max-width: 100%;
 }
 .max-w-none {
   max-width: none;
@@ -765,6 +771,9 @@
 .gap-4 {
   gap: calc(var(--spacing, 0.25rem) * 4);
 }
+.gap-5 {
+  gap: calc(var(--spacing, 0.25rem) * 5);
+}
 .gap-6 {
   gap: calc(var(--spacing, 0.25rem) * 6);
 }
@@ -811,6 +820,13 @@
     --tw-space-y-reverse: 0;
     margin-block-start: calc(calc(var(--spacing, 0.25rem) * 8) * var(--tw-space-y-reverse));
     margin-block-end: calc(calc(var(--spacing, 0.25rem) * 8) * calc(1 - var(--tw-space-y-reverse)));
+  }
+}
+.space-y-10 {
+  :where(& > :not(:last-child)) {
+    --tw-space-y-reverse: 0;
+    margin-block-start: calc(calc(var(--spacing, 0.25rem) * 10) * var(--tw-space-y-reverse));
+    margin-block-end: calc(calc(var(--spacing, 0.25rem) * 10) * calc(1 - var(--tw-space-y-reverse)));
   }
 }
 .space-y-reverse {
@@ -933,9 +949,6 @@
 }
 .rounded {
   border-radius: 0.25rem;
-}
-.rounded-2xl {
-  border-radius: var(--radius-2xl, 1rem);
 }
 .rounded-full {
   border-radius: calc(infinity * 1px);
@@ -1070,6 +1083,9 @@
 }
 .border-\[\#fbf0df\] {
   border-color: #fbf0df;
+}
+.border-slate-100 {
+  border-color: var(--color-slate-100, oklch(96.8% 0.007 247.896));
 }
 .border-slate-200 {
   border-color: var(--color-slate-200, oklch(92.9% 0.013 255.508));
@@ -1465,9 +1481,6 @@
 .py-6 {
   padding-block: calc(var(--spacing, 0.25rem) * 6);
 }
-.py-8 {
-  padding-block: calc(var(--spacing, 0.25rem) * 8);
-}
 .py-10 {
   padding-block: calc(var(--spacing, 0.25rem) * 10);
 }
@@ -1477,11 +1490,14 @@
 .pt-6 {
   padding-top: calc(var(--spacing, 0.25rem) * 6);
 }
+.pt-8 {
+  padding-top: calc(var(--spacing, 0.25rem) * 8);
+}
 .pr-8 {
   padding-right: calc(var(--spacing, 0.25rem) * 8);
 }
-.pb-4 {
-  padding-bottom: calc(var(--spacing, 0.25rem) * 4);
+.pb-5 {
+  padding-bottom: calc(var(--spacing, 0.25rem) * 5);
 }
 .pl-2 {
   padding-left: calc(var(--spacing, 0.25rem) * 2);
@@ -1698,11 +1714,14 @@
 .text-slate-600 {
   color: var(--color-slate-600, oklch(44.6% 0.043 257.281));
 }
-.text-slate-700 {
-  color: var(--color-slate-700, oklch(37.2% 0.044 257.287));
+.text-slate-800 {
+  color: var(--color-slate-800, oklch(27.9% 0.041 260.031));
 }
 .text-slate-900 {
   color: var(--color-slate-900, oklch(20.8% 0.042 265.755));
+}
+.text-slate-950 {
+  color: var(--color-slate-950, oklch(12.9% 0.042 264.695));
 }
 .text-white {
   color: var(--color-white, #fff);
@@ -2233,6 +2252,13 @@
     }
   }
 }
+.hover\:underline-offset-4 {
+  &:hover {
+    @media (hover: hover) {
+      text-underline-offset: 4px;
+    }
+  }
+}
 .hover\:drop-shadow-\[0_0_2em_\#61dafbaa\] {
   &:hover {
     @media (hover: hover) {
@@ -2432,6 +2458,11 @@
     }
   }
 }
+.md\:mt-16 {
+  @media (width >= 48rem) {
+    margin-top: calc(var(--spacing, 0.25rem) * 16);
+  }
+}
 .md\:flex-row {
   @media (width >= 48rem) {
     flex-direction: row;
@@ -2457,20 +2488,23 @@
     gap: calc(var(--spacing, 0.25rem) * 6);
   }
 }
+.md\:space-y-12 {
+  @media (width >= 48rem) {
+    :where(& > :not(:last-child)) {
+      --tw-space-y-reverse: 0;
+      margin-block-start: calc(calc(var(--spacing, 0.25rem) * 12) * var(--tw-space-y-reverse));
+      margin-block-end: calc(calc(var(--spacing, 0.25rem) * 12) * calc(1 - var(--tw-space-y-reverse)));
+    }
+  }
+}
 .md\:px-10 {
   @media (width >= 48rem) {
     padding-inline: calc(var(--spacing, 0.25rem) * 10);
   }
 }
-.md\:py-10 {
+.md\:pt-10 {
   @media (width >= 48rem) {
-    padding-block: calc(var(--spacing, 0.25rem) * 10);
-  }
-}
-.md\:text-3xl {
-  @media (width >= 48rem) {
-    font-size: var(--text-3xl, 1.875rem);
-    line-height: var(--tw-leading, var(--text-3xl--line-height, calc(2.25 / 1.875)));
+    padding-top: calc(var(--spacing, 0.25rem) * 10);
   }
 }
 .md\:text-4xl {
@@ -2563,23 +2597,35 @@
   .markdown h2 {
     margin-top: calc(var(--spacing, 0.25rem) * 10);
     font-family: var(--font-serif, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif);
-    font-size: var(--text-2xl, 1.5rem);
-    line-height: var(--tw-leading, var(--text-2xl--line-height, calc(2 / 1.5)));
+    font-size: var(--text-xl, 1.25rem);
+    line-height: var(--tw-leading, var(--text-xl--line-height, calc(1.75 / 1.25)));
     color: var(--color-slate-900, oklch(20.8% 0.042 265.755));
+    @media (width >= 48rem) {
+      font-size: var(--text-2xl, 1.5rem);
+      line-height: var(--tw-leading, var(--text-2xl--line-height, calc(2 / 1.5)));
+    }
   }
   .markdown h3 {
     margin-top: calc(var(--spacing, 0.25rem) * 8);
     font-family: var(--font-serif, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif);
-    font-size: var(--text-xl, 1.25rem);
-    line-height: var(--tw-leading, var(--text-xl--line-height, calc(1.75 / 1.25)));
+    font-size: var(--text-lg, 1.125rem);
+    line-height: var(--tw-leading, var(--text-lg--line-height, calc(1.75 / 1.125)));
     color: var(--color-slate-900, oklch(20.8% 0.042 265.755));
+    @media (width >= 48rem) {
+      font-size: var(--text-xl, 1.25rem);
+      line-height: var(--tw-leading, var(--text-xl--line-height, calc(1.75 / 1.25)));
+    }
   }
   .markdown h4 {
     margin-top: calc(var(--spacing, 0.25rem) * 6);
     font-family: var(--font-serif, ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif);
-    font-size: var(--text-lg, 1.125rem);
-    line-height: var(--tw-leading, var(--text-lg--line-height, calc(1.75 / 1.125)));
+    font-size: var(--text-base, 1rem);
+    line-height: var(--tw-leading, var(--text-base--line-height, calc(1.5 / 1)));
     color: var(--color-slate-900, oklch(20.8% 0.042 265.755));
+    @media (width >= 48rem) {
+      font-size: var(--text-lg, 1.125rem);
+      line-height: var(--tw-leading, var(--text-lg--line-height, calc(1.75 / 1.125)));
+    }
   }
   .markdown p {
     margin-top: calc(var(--spacing, 0.25rem) * 4);
@@ -2626,19 +2672,24 @@
     padding-block: calc(var(--spacing, 0.25rem) * 0.5);
     font-size: var(--text-sm, 0.875rem);
     line-height: var(--tw-leading, var(--text-sm--line-height, calc(1.25 / 0.875)));
+    overflow-wrap: break-word;
   }
   .markdown pre {
     margin-block: calc(var(--spacing, 0.25rem) * 6);
+    max-width: 100%;
     overflow-x: auto;
     border-radius: var(--radius-2xl, 1rem);
     border-style: var(--tw-border-style);
     border-width: 1px;
     border-color: var(--color-slate-200, oklch(92.9% 0.013 255.508));
     background-color: var(--color-slate-100, oklch(96.8% 0.007 247.896));
-    padding: calc(var(--spacing, 0.25rem) * 5);
+    padding: calc(var(--spacing, 0.25rem) * 4);
     font-size: var(--text-sm, 0.875rem);
     line-height: var(--tw-leading, var(--text-sm--line-height, calc(1.25 / 0.875)));
     color: var(--color-slate-900, oklch(20.8% 0.042 265.755));
+    @media (width >= 48rem) {
+      padding: calc(var(--spacing, 0.25rem) * 5);
+    }
   }
   .markdown pre code {
     background-color: transparent;

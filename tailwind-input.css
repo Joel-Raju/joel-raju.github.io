@@ -20,15 +20,15 @@
   }
 
   .markdown h2 {
-    @apply mt-10 text-2xl font-serif text-slate-900;
+    @apply mt-10 text-xl font-serif text-slate-900 md:text-2xl;
   }
 
   .markdown h3 {
-    @apply mt-8 text-xl font-serif text-slate-900;
+    @apply mt-8 text-lg font-serif text-slate-900 md:text-xl;
   }
 
   .markdown h4 {
-    @apply mt-6 text-lg font-serif text-slate-900;
+    @apply mt-6 text-base font-serif text-slate-900 md:text-lg;
   }
 
   .markdown p {
@@ -56,11 +56,11 @@
   }
 
   .markdown code {
-    @apply rounded bg-slate-100 px-1 py-0.5 text-sm;
+    @apply rounded bg-slate-100 px-1 py-0.5 text-sm break-words;
   }
 
   .markdown pre {
-    @apply my-6 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-100 p-5 text-sm text-slate-900;
+    @apply my-6 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-100 p-4 text-sm text-slate-900 max-w-full md:p-5;
   }
 
   .markdown pre code {
