@@ -21,6 +21,11 @@
     @apply leading-relaxed text-slate-700 dark:text-slate-300;
   }
 
+  .markdown,
+  .now-diary {
+    overflow-wrap: anywhere;
+  }
+
   .markdown h2 {
     @apply mt-10 text-xl font-serif text-slate-900 dark:text-slate-100 md:text-2xl;
   }
@@ -58,7 +63,7 @@
   }
 
   .markdown code {
-    @apply rounded bg-slate-100 px-1 py-0.5 text-sm break-words dark:bg-slate-800;
+    @apply rounded bg-slate-100 px-1 py-0.5 text-sm break-all dark:bg-slate-800;
   }
 
   .markdown pre {
@@ -71,6 +76,22 @@
 
   .markdown img {
     @apply my-6 max-w-full h-auto rounded-2xl;
+  }
+
+  .markdown iframe,
+  .markdown video,
+  .markdown table {
+    @apply max-w-full;
+  }
+
+  .markdown iframe,
+  .markdown video {
+    @apply w-full rounded-2xl;
+    aspect-ratio: 16 / 9;
+  }
+
+  .markdown table {
+    @apply block overflow-x-auto;
   }
 
 
