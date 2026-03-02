@@ -2,7 +2,6 @@
 title = "Taming LiveView Event Handlers: A CRM Integration Story (Part 1)"
 date = 2026-02-25
 description = "Why putting business logic in Phoenix LiveView handle_event callbacks becomes a liability when integrating with external systems."
-draft = true
 
 [taxonomies]
 tags = ["Elixir", "Phoenix", "LiveView", "Architecture", "programming"]

@@ -2,7 +2,6 @@
 title = "Taming LiveView Event Handlers: A CRM Integration Story (Part 2)"
 date = 2026-02-26
 description = "How to use PhoenixCommands to decouple Phoenix LiveView UI events from complex business logic."
-draft = true
 
 [taxonomies]
 tags = ["Elixir", "Phoenix", "LiveView", "Architecture", "programming"]
