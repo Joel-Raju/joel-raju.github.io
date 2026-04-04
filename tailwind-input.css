@@ -8,11 +8,24 @@
 
 @layer base {
   body {
-    @apply font-sans;
+    @apply font-sans overflow-x-hidden;
   }
 
   a {
     @apply text-inherit no-underline;
+  }
+
+  img, video, iframe, table, pre {
+    max-width: 100%;
+  }
+
+  table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  pre {
+    overflow-x: auto;
   }
 }
 
@@ -97,6 +110,28 @@
 
   .now-diary {
     @apply leading-relaxed text-slate-700 dark:text-slate-300;
+  }
+
+  .now-diary code {
+    @apply rounded bg-slate-100 px-1 py-0.5 text-sm break-all dark:bg-slate-800;
+  }
+
+  .now-diary pre {
+    @apply my-6 overflow-x-auto rounded-2xl border border-slate-200 bg-slate-100 p-4 text-sm text-slate-900 max-w-full dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 md:p-5;
+  }
+
+  .now-diary pre code {
+    @apply bg-transparent p-0;
+  }
+
+  .now-diary img,
+  .now-diary iframe,
+  .now-diary video {
+    @apply max-w-full h-auto;
+  }
+
+  .now-diary table {
+    @apply block overflow-x-auto max-w-full;
   }
 
   .now-diary h2 {
